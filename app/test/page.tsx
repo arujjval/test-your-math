@@ -2,7 +2,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import run from '@/lib/getQuestions'
-import * as json5 from 'json5';
+import JSON5 from 'json5'
 import QuestionTemplate from '@/components/QuestionTemplate';
 import Loading from '@/components/Loading';
 import SubmitDialog from '@/components/SubmitDialog';
@@ -16,7 +16,7 @@ const page = () => {
   const [currQues, setCurrQues] = useState<number>(0)
 
   const data = localStorage.getItem('values')
-  const values = json5.parse(data as string) 
+  const values = JSON5.parse(data as string) 
 
   useEffect(() => {
     run(values).then((data) => {

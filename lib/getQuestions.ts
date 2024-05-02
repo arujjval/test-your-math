@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-import * as json5 from 'json5';
+import JSON5 from 'json5'
 
 const api = "AIzaSyBwEkrWGToWZKibCQqOYLm38m9kq2-dlU8"
 
@@ -23,7 +23,7 @@ async function run(userPrompt: userSelection) {
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  const data = json5.parse(text);
+  const data = JSON5.parse(text);
   return data;
 
 }
